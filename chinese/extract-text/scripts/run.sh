@@ -10,5 +10,7 @@ done
 for i in `find ../data/ -name cna_cmn_*.txt`;
 do 
     echo $i
-    opencc -i $i -o ../data/`basename $i .txt`.chs.txt -c tw2sp.json
+    # opencc -i $i -o ../data/`basename $i .txt`.chs.txt -c tw2sp.json
+    opencc -i $i -o ../data/tmp.txt -c tw2sp.json
+    mv ../data/tmp.txt $i
 done
